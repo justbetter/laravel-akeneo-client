@@ -1,0 +1,59 @@
+{
+    "name": "justbetter/laravel-akeneo-client",
+    "description": "A Laravel package for the Akeneo API",
+    "type": "package",
+    "license": "MIT",
+    "homepage": "https://github.com/justbetter/laravel-akeneo-client",
+    "authors": [
+        {
+            "name": "Ramon Rietdijk",
+            "email": "ramon@justbetter.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "akeneo/api-php-client": "*",
+        "guzzlehttp/guzzle": "^7.4",
+        "laravel/framework": "^9.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.1",
+        "nunomaduro/larastan": "^2.1",
+        "orchestra/testbench": "^7.0",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpunit/phpunit": "^9.5.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "JustBetter\\AkeneoClient\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JustBetter\\AkeneoClient\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan",
+        "style": "pint --test",
+        "quality": [
+            "@test",
+            "@analyse",
+            "@style"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JustBetter\\AkeneoClient\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
