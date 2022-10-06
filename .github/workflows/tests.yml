@@ -12,7 +12,7 @@ jobs:
                 php: [8.0, 8.1]
                 laravel: [9.*]
                 akeneo: [v5.*, v6.*, v7.*, v8.*, v9.*, v10.*]
-                stability: [prefer-lowest, prefer-stable]
+                stability: [prefer-stable]
                 include:
                     - laravel: 9.*
                       testbench: 7.*
