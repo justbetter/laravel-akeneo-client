@@ -1,0 +1,38 @@
+name: tests
+
+on: ['push', 'pull_request']
+
+jobs:
+    test:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            fail-fast: true
+            matrix:
+                os: [ubuntu-20.04, ubuntu-22.04]
+                php: [8.0, 8.1]
+                laravel: [9.*]
+                akeneo: [v5.*, v6.*, v7.*, v8.*, v9.*, v10.*]
+                stability: [prefer-stable]
+                include:
+                    - laravel: 9.*
+                      testbench: 7.*
+
+        name: P${{ matrix.php }} - L${{ matrix.laravel }} - A${{ matrix.akeneo }} - ${{ matrix.stability }} - ${{ matrix.os }}
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php }}
+                  extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+                  coverage: none
+
+            - name: Install dependencies
+              run: |
+                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "akeneo/api-php-client:${{ matrix.akeneo }}" --no-interaction --no-update
+                  composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+            - name: Execute tests
+              run: composer test
