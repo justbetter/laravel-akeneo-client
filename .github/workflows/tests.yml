@@ -11,7 +11,7 @@ jobs:
                 os: [ubuntu-20.04, ubuntu-22.04]
                 php: [8.0, 8.1]
                 laravel: [9.*]
-                akeneo: [v1.*, v2.*, v3.*, v4.*, v5.*, v6.*, v7.*, v8.*, v9.*, v10.*]
+                akeneo: [v5.*, v6.*, v7.*, v8.*, v9.*, v10.*]
                 stability: [prefer-lowest, prefer-stable]
                 include:
                     - laravel: 9.*
