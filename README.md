@@ -88,6 +88,7 @@ This package makes testing and mocking Akeneo calls very easily.
 
 ```php
 <?php
+
 use Illuminate\Support\Facades\Http;
 use JustBetter\AkeneoClient\Client\Akeneo;
 
