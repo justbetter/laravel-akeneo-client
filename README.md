@@ -5,10 +5,10 @@
 # Laravel Akeneo Client
 
 <p>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/tests?label=tests&style=flat-square" alt="Tests"></a>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/coverage?label=coverage&style=flat-square" alt="Coverage"></a>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/analyse?label=analysis&style=flat-square" alt="Analysis"></a>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/packagist/dt/justbetter/laravel-akeneo-client?color=blue&style=flat-square" alt="Total downloads"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/tests?label=tests&style=flat" alt="Tests"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/coverage?label=coverage&style=flat" alt="Coverage"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/analyse?label=analysis&style=flat" alt="Analysis"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/packagist/dt/justbetter/laravel-akeneo-client?color=blue&style=flat" alt="Total downloads"></a>
 </p>
 
 Connect to your Akeneo instance using the official [akeneo/api-php-client](https://github.com/akeneo/api-php-client).
