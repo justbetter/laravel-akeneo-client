@@ -5,9 +5,9 @@
 # Laravel Akeneo Client
 
 <p>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/tests?label=tests&style=flat" alt="Tests"></a>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/coverage?label=coverage&style=flat" alt="Coverage"></a>
-    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/workflow/status/justbetter/laravel-akeneo-client/analyse?label=analysis&style=flat" alt="Analysis"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/actions/workflow/status/justbetter/laravel-akeneo-client/tests.yml?label=tests&style=flat" alt="Tests"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/actions/workflow/status/justbetter/laravel-akeneo-client/coverage.yml?label=coverage&style=flat" alt="Coverage"></a>
+    <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/github/actions/workflow/status/justbetter/laravel-akeneo-client/analyse.yml?label=analysis&style=flat" alt="Analysis"></a>
     <a href="https://github.com/justbetter/laravel-akeneo-client"><img src="https://img.shields.io/packagist/dt/justbetter/laravel-akeneo-client?color=blue&style=flat" alt="Total downloads"></a>
 </p>
 
