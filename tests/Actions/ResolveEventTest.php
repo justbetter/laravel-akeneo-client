@@ -16,6 +16,7 @@ class ResolveEventTest extends TestCase
 {
     /**
      * @test
+     *
      * @dataProvider events
      */
     public function it_can_resolve_events(string $event, string $class): void
@@ -28,7 +29,7 @@ class ResolveEventTest extends TestCase
         $this->assertEquals($class, $resolvedClass);
     }
 
-    public function events(): array
+    public static function events(): array
     {
         return [
             [

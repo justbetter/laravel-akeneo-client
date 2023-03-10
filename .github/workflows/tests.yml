@@ -8,14 +8,14 @@ jobs:
         strategy:
             fail-fast: true
             matrix:
-                os: [ubuntu-20.04, ubuntu-22.04]
-                php: [8.0, 8.1]
-                laravel: [9.*]
-                akeneo: [v5.*, v6.*, v7.*, v8.*, v9.*, v10.*]
+                os: [ubuntu-latest]
+                php: [8.1, 8.2]
+                laravel: [10.*]
+                akeneo: [v5.*, v6.*, v7.*, v8.*, v9.*, v10.*, v11.*]
                 stability: [prefer-stable]
                 include:
-                    - laravel: 9.*
-                      testbench: 7.*
+                    - laravel: 10.*
+                      testbench: 8.*
 
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - A${{ matrix.akeneo }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
