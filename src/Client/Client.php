@@ -20,7 +20,15 @@ class Client implements ClientInterface
 
         $contentType = Arr::first(Arr::wrap($contentTypes)) ?? 'application/json';
 
+        /** @var int $timeout */
+        $timeout = config('akeneo.timeout');
+
+        /** @var int $connectTimeout */
+        $connectTimeout = config('akeneo.connect_timeout');
+
         return Http::withHeaders($headers)
+            ->timeout($timeout)
+            ->connectTimeout($connectTimeout)
             ->withBody($request->getBody()->getContents(), $contentType)
             ->send($request->getMethod(), $request->getUri())
             ->toPsrResponse();
