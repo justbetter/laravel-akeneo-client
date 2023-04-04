@@ -22,4 +22,9 @@ return [
         \JustBetter\AkeneoClient\Http\Middleware\HMacMiddleware::class,
     ],
 
+    /* Specify the timeout (in seconds) for the request. */
+    'timeout' => 30,
+
+    /* Specify the connection timeout (in seconds) for the request. */
+    'connect_timeout' => 10,
 ];

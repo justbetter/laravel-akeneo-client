@@ -43,6 +43,8 @@ class Akeneo
             'username' => '::username::',
             'password' => '::password::',
             'webhook_secret' => '::webhook-secret::',
+            'timeout' => 30,
+            'connect_timeout' => 10,
         ]);
 
         Http::fake([
