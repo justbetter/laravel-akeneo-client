@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.1.1...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.1.2...main)
+## [1.1.2](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.1.2) - 2023-06-15
+
+### What's Changed
+* Cast the request body to string by @ramonrietdijk in https://github.com/justbetter/laravel-akeneo-client/pull/8
+
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.1.1...1.1.2
+
 ## [1.1.1](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.1.1) - 2023-04-04
 
 ### What's Changed
