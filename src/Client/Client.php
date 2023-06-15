@@ -29,7 +29,7 @@ class Client implements ClientInterface
         return Http::withHeaders($headers)
             ->timeout($timeout)
             ->connectTimeout($connectTimeout)
-            ->withBody($request->getBody()->getContents(), $contentType)
+            ->withBody((string) $request->getBody(), $contentType)
             ->send($request->getMethod(), $request->getUri())
             ->toPsrResponse();
     }
