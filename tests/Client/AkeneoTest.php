@@ -2,6 +2,7 @@
 
 namespace JustBetter\AkeneoClient\Tests\Actions;
 
+use GuzzleHttp\Promise\Promise;
 use Illuminate\Support\Facades\Http;
 use JustBetter\AkeneoClient\Client\Akeneo;
 use JustBetter\AkeneoClient\Exceptions\AkeneoException;
@@ -47,6 +48,59 @@ class AkeneoTest extends TestCase
         $response = $akeneo->getProductApi()->get('1000');
 
         $this->assertEquals($product, $response);
+    }
+
+    /** @test */
+    public function it_can_upsert_async_products(): void
+    {
+        $product = [
+            'enabled' => true,
+            'family' => 'tshirt',
+            'categories' => ['summer_collection'],
+            'groups' => [],
+            'parent' => null,
+            'values' => [
+                'name' => [
+                    [
+                        'data' => 'top',
+                        'locale' => 'en_US',
+                        'scope' => null,
+                    ],
+                    [
+                        'data' => 'Débardeur',
+                        'locale' => 'fr_FR',
+                        'scope' => null,
+                    ],
+                ],
+                'price' => [
+                    [
+                        'data' => [
+                            [
+                                'amount' => '15.5',
+                                'currency' => 'EUR',
+                            ],
+                            [
+                                'amount' => '15',
+                                'currency' => 'USD',
+                            ],
+                        ],
+                        'locale' => null,
+                        'scope' => null,
+                    ],
+                ],
+            ],
+        ];
+
+        Http::fake([
+            'akeneo/api/rest/v1/products/top' => Http::response($product),
+        ]);
+
+        /** @var Akeneo $akeneo */
+        $akeneo = app(Akeneo::class);
+
+        $response = $akeneo->getProductApi()->upsertAsync('top');
+
+        $this->assertInstanceOf(Promise::class, $response);
     }
 
     /** @test */
