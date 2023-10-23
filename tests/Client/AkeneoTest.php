@@ -2,7 +2,7 @@
 
 namespace JustBetter\AkeneoClient\Tests\Actions;
 
-use GuzzleHttp\Promise\Promise;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use JustBetter\AkeneoClient\Client\Akeneo;
 use JustBetter\AkeneoClient\Exceptions\AkeneoException;
@@ -98,9 +98,9 @@ class AkeneoTest extends TestCase
         /** @var Akeneo $akeneo */
         $akeneo = app(Akeneo::class);
 
-        $response = $akeneo->getProductApi()->upsertAsync('top');
-
-        $this->assertInstanceOf(Promise::class, $response);
+        $akeneo->getProductApi()->upsertAsync('top')->then(function (Response $response) use ($product): void {
+            $this->assertEquals($product, $response->json());
+        })->wait();
     }
 
     /** @test */
