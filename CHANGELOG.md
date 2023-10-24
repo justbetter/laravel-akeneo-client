@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.1.2...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.2.0...main)
+## [1.2.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.2.0) - 2023-10-24
+
+### What's Changed
+* Add new sendAsyncRequest method by @FinnPaes in https://github.com/justbetter/laravel-akeneo-client/pull/10
+
+### New Contributors
+* @FinnPaes made their first contribution in https://github.com/justbetter/laravel-akeneo-client/pull/10
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.1.2...1.2.0
+
 ## [1.1.2](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.1.2) - 2023-06-15
 
 ### What's Changed
