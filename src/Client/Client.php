@@ -2,15 +2,35 @@
 
 namespace JustBetter\AkeneoClient\Client;
 
+use Akeneo\Pim\ApiClient\Client\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
+use Http\Promise\Promise;
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
-use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class Client implements ClientInterface
 {
     public function sendRequest(RequestInterface $request): ResponseInterface
+    {
+        return $this->buildHttpRequest($request)
+            ->send($request->getMethod(), $request->getUri())
+            ->toPsrResponse();
+    }
+
+    public function sendAsyncRequest(RequestInterface $request): PromiseInterface|Promise
+    {
+        /** @var Promise $promise */
+        $promise = $this->buildHttpRequest($request)
+            ->async()
+            ->send($request->getMethod(), $request->getUri());
+
+        return $promise;
+    }
+
+    protected function buildHttpRequest(RequestInterface $request): PendingRequest
     {
         $contentTypes = $request->getHeader('Content-Type');
 
@@ -29,8 +49,6 @@ class Client implements ClientInterface
         return Http::withHeaders($headers)
             ->timeout($timeout)
             ->connectTimeout($connectTimeout)
-            ->withBody((string) $request->getBody(), $contentType)
-            ->send($request->getMethod(), $request->getUri())
-            ->toPsrResponse();
+            ->withBody((string) $request->getBody(), $contentType);
     }
 }
