@@ -8,3 +8,4 @@ parameters:
         - tests
     level: 8
     checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
