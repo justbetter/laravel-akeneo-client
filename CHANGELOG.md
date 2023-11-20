@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.2.0...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.3.0...main)
+## [1.3.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.3.0) - 2023-11-20
+
+### What's Changed
+* Updated doc blocks and introduced attributes by @ramonrietdijk in https://github.com/justbetter/laravel-akeneo-client/pull/11
+
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.2.0...1.3.0
+
 ## [1.2.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.2.0) - 2023-10-24
 
 ### What's Changed
