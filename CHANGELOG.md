@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.3.0...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.3.1...main)
+## [1.3.1](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.3.1) - 2024-02-27
+
+### What's Changed
+* Enable PHP8.3 by @dejury in https://github.com/justbetter/laravel-akeneo-client/pull/12
+
+### New Contributors
+* @dejury made their first contribution in https://github.com/justbetter/laravel-akeneo-client/pull/12
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.3.0...1.3.1
+
 ## [1.3.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.3.0) - 2023-11-20
 
 ### What's Changed
