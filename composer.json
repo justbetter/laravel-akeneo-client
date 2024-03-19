@@ -15,12 +15,12 @@
     "php": "^8.2|^8.3",
     "akeneo/api-php-client": "^11.0",
     "guzzlehttp/guzzle": "^7.5",
-    "laravel/framework": "^10.0"
+    "laravel/framework": "^10.0|^11.0"
   },
   "require-dev": {
     "laravel/pint": "^1.6",
-    "nunomaduro/larastan": "^2.5",
-    "orchestra/testbench": "^8.11",
+    "larastan/larastan": "^2.5",
+    "orchestra/testbench": "^8.11|^9.0",
     "phpstan/phpstan-mockery": "^1.1",
     "phpunit/phpunit": "^10.0"
   },
