@@ -13,6 +13,6 @@ class ClientBuilder extends AkeneoPimClientBuilder
     {
         parent::__construct($baseUri);
 
-        $this->httpClient = new Client();
+        $this->httpClient = new Client;
     }
 }
