@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.4.0...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.4.1...main)
+## [1.4.1](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.4.1) - 2024-09-25
+
+### What's Changed
+* Fixed breaking change from akeneo/api-php-client by @ramonrietdijk in https://github.com/justbetter/laravel-akeneo-client/pull/15
+
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.4.0...1.4.1
+
 ## [1.4.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.4.0) - 2024-03-19
 
 ### What's Changed
