@@ -10,8 +10,7 @@ class DispatchEvent implements DispatchesEvents
 {
     public function __construct(
         public ResolvesEvents $resolvesEvents
-    ) {
-    }
+    ) {}
 
     public function dispatch(array $event): void
     {

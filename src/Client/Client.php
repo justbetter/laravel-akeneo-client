@@ -20,7 +20,7 @@ class Client implements ClientInterface
             ->toPsrResponse();
     }
 
-    public function sendAsyncRequest(RequestInterface $request): PromiseInterface|Promise
+    public function sendAsync(RequestInterface $request): PromiseInterface|Promise
     {
         /** @var Promise $promise */
         $promise = $this->buildHttpRequest($request)
