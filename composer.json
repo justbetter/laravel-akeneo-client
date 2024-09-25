@@ -18,9 +18,10 @@
         "laravel/framework": "^10.0|^11.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.18",
         "larastan/larastan": "^2.9",
+        "laravel/pint": "^1.18",
         "orchestra/testbench": "^8.27|^9.5",
+        "pestphp/pest": "^2.0",
         "phpstan/phpstan-mockery": "^1.1",
         "phpunit/phpunit": "^10.5"
     },
@@ -48,7 +49,8 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "pestphp/pest-plugin": true
         }
     },
     "extra": {
