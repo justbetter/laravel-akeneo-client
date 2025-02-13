@@ -9,12 +9,10 @@ jobs:
             fail-fast: true
             matrix:
                 os: [ubuntu-latest]
-                php: [8.3]
-                laravel: [10.*, 11.*]
+                php: [8.4]
+                laravel: [11.*]
                 stability: [prefer-stable]
                 include:
-                    - laravel: 10.*
-                      testbench: 8.*
                     - laravel: 11.*
                       testbench: 9.*
 
@@ -36,4 +34,4 @@ jobs:
                   composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
                   composer update --${{ matrix.stability }} --prefer-dist --no-interaction
             - name: Execute tests
-              run: XDEBUG_MODE=coverage php vendor/bin/pest --coverage --min=100
+              run: composer coverage
