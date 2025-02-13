@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.4.1...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.5.0...main)
+## [1.5.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.5.0) - 2025-02-13
+
+### What's Changed
+* Laravel 12 support by @VincentBean in https://github.com/justbetter/laravel-akeneo-client/pull/16
+
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.4.1...1.5.0
+
 ## [1.4.1](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.4.1) - 2024-09-25
 
 ### What's Changed
