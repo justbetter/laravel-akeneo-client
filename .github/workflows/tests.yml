@@ -9,17 +9,14 @@ jobs:
             fail-fast: true
             matrix:
                 os: [ubuntu-latest]
-                php: [8.2, 8.3]
-                laravel: [10.*, 11.*]
-                akeneo: [v11.*]
-                stability: [prefer-stable]
+                php: [8.3, 8.4]
+                laravel: [11.*]
+                stability: [prefer-lowest, prefer-stable]
                 include:
-                    - laravel: 10.*
-                      testbench: 8.*
                     - laravel: 11.*
                       testbench: 9.*
 
-        name: P${{ matrix.php }} - L${{ matrix.laravel }} - A${{ matrix.akeneo }} - ${{ matrix.stability }} - ${{ matrix.os }}
+        name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
         steps:
             - name: Checkout code
@@ -34,7 +31,7 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "akeneo/api-php-client:${{ matrix.akeneo }}" --no-interaction --no-update
+                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
                   composer update --${{ matrix.stability }} --prefer-dist --no-interaction
             - name: Execute tests
               run: composer test
