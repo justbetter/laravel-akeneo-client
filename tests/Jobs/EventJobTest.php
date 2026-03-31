@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Tests\Jobs;
 
 use JustBetter\AkeneoClient\Contracts\DispatchesEvents;
@@ -7,10 +9,9 @@ use JustBetter\AkeneoClient\Jobs\EventJob;
 use JustBetter\AkeneoClient\Tests\TestCase;
 use Mockery\MockInterface;
 
-class EventJobTest extends TestCase
+final class EventJobTest extends TestCase
 {
-    /** @test */
-    public function it_can_dispatch_events(): void
+    public function test_it_can_dispatch_events(): void
     {
         $payload = [
             'action' => 'product.updated',

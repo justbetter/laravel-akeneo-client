@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Http\Middleware;
 
 use Closure;
@@ -20,7 +22,7 @@ class HMacMiddleware
         $requestBody = $request->getContent();
         $signedPayload = $timestamp.'.'.$requestBody;
 
-        $generatedSignature = hash_hmac('sha256', $signedPayload, $secret);
+        $generatedSignature = hash_hmac('sha256', $signedPayload, (string) $secret);
 
         if (! hash_equals($signature, $generatedSignature)) {
             return response()->json(['error' => 'Invalid signature'], 400);

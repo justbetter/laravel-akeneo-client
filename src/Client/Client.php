@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Client;
 
 use Akeneo\Pim\ApiClient\Client\ClientInterface;
