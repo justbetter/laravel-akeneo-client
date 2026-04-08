@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Tests\Actions;
 
 use JustBetter\AkeneoClient\Actions\ResolveEvent;
@@ -11,15 +13,12 @@ use JustBetter\AkeneoClient\Events\ProductRemovedEvent;
 use JustBetter\AkeneoClient\Events\ProductUpdatedEvent;
 use JustBetter\AkeneoClient\Exceptions\AkeneoException;
 use JustBetter\AkeneoClient\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
-class ResolveEventTest extends TestCase
+final class ResolveEventTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @dataProvider events
-     */
-    public function it_can_resolve_events(string $event, string $class): void
+    #[DataProvider('events')]
+    public function test_it_can_resolve_events(string $event, string $class): void
     {
         /** @var ResolveEvent $action */
         $action = app(ResolveEvent::class);
@@ -29,38 +28,35 @@ class ResolveEventTest extends TestCase
         $this->assertEquals($class, $resolvedClass);
     }
 
-    public static function events(): array
+    public static function events(): \Iterator
     {
-        return [
-            [
-                'product.created',
-                ProductCreatedEvent::class,
-            ],
-            [
-                'product.updated',
-                ProductUpdatedEvent::class,
-            ],
-            [
-                'product.removed',
-                ProductRemovedEvent::class,
-            ],
-            [
-                'product_model.created',
-                ProductModelCreatedEvent::class,
-            ],
-            [
-                'product_model.updated',
-                ProductModelUpdatedEvent::class,
-            ],
-            [
-                'product_model.removed',
-                ProductModelRemovedEvent::class,
-            ],
+        yield [
+            'product.created',
+            ProductCreatedEvent::class,
+        ];
+        yield [
+            'product.updated',
+            ProductUpdatedEvent::class,
+        ];
+        yield [
+            'product.removed',
+            ProductRemovedEvent::class,
+        ];
+        yield [
+            'product_model.created',
+            ProductModelCreatedEvent::class,
+        ];
+        yield [
+            'product_model.updated',
+            ProductModelUpdatedEvent::class,
+        ];
+        yield [
+            'product_model.removed',
+            ProductModelRemovedEvent::class,
         ];
     }
 
-    /** @test */
-    public function it_can_throw_exceptions(): void
+    public function test_it_can_throw_exceptions(): void
     {
         $this->expectException(AkeneoException::class);
 

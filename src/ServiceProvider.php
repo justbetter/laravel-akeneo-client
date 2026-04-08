@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient;
 
 use Illuminate\Support\Facades\Route;
@@ -10,6 +12,7 @@ use JustBetter\AkeneoClient\Client\Akeneo;
 
 class ServiceProvider extends BaseServiceProvider
 {
+    #[\Override]
     public function register(): void
     {
         $this
@@ -27,7 +30,7 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function registerClient(): static
     {
-        $this->app->singleton(Akeneo::class, fn () => new Akeneo(
+        $this->app->singleton(Akeneo::class, fn (): Akeneo => new Akeneo(
             url: config('akeneo.url'),
             clientId: config('akeneo.client_id'),
             secret: config('akeneo.secret'),

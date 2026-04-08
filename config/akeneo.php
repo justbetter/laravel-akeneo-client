@@ -1,5 +1,7 @@
 <?php
 
+use JustBetter\AkeneoClient\Http\Middleware\HMacMiddleware;
+
 return [
 
     'url' => env('AKENEO_URL'),
@@ -19,7 +21,7 @@ return [
     'prefix' => 'akeneo',
 
     'middleware' => [
-        \JustBetter\AkeneoClient\Http\Middleware\HMacMiddleware::class,
+        HMacMiddleware::class,
     ],
 
     /* Specify the timeout (in seconds) for the request. */

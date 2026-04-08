@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Tests\Actions;
 
 use Illuminate\Http\Client\Response;
@@ -8,7 +10,7 @@ use JustBetter\AkeneoClient\Client\Akeneo;
 use JustBetter\AkeneoClient\Exceptions\AkeneoException;
 use JustBetter\AkeneoClient\Tests\TestCase;
 
-class AkeneoTest extends TestCase
+final class AkeneoTest extends TestCase
 {
     protected function setUp(): void
     {
@@ -17,8 +19,7 @@ class AkeneoTest extends TestCase
         Akeneo::fake();
     }
 
-    /** @test */
-    public function it_can_get_products(): void
+    public function test_it_can_get_products(): void
     {
         $product = [
             'identifier' => '1000',
@@ -50,8 +51,7 @@ class AkeneoTest extends TestCase
         $this->assertEquals($product, $response);
     }
 
-    /** @test */
-    public function it_can_upsert_async_products(): void
+    public function test_it_can_upsert_async_products(): void
     {
         $product = [
             'enabled' => true,
@@ -103,8 +103,7 @@ class AkeneoTest extends TestCase
         })->wait();
     }
 
-    /** @test */
-    public function it_throws_exceptions_when_method_is_not_callable(): void
+    public function test_it_throws_exceptions_when_method_is_not_callable(): void
     {
         /** @var Akeneo $akeneo */
         $akeneo = app(Akeneo::class);

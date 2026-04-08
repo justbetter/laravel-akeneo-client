@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Client;
 
 use Akeneo\Pim\ApiClient\Client\ClientInterface;
@@ -16,7 +18,7 @@ class Client implements ClientInterface
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
         return $this->buildHttpRequest($request)
-            ->send($request->getMethod(), $request->getUri())
+            ->send($request->getMethod(), $request->getUri()->getPath())
             ->toPsrResponse();
     }
 
@@ -25,7 +27,7 @@ class Client implements ClientInterface
         /** @var Promise $promise */
         $promise = $this->buildHttpRequest($request)
             ->async()
-            ->send($request->getMethod(), $request->getUri());
+            ->send($request->getMethod(), $request->getUri()->getPath());
 
         return $promise;
     }

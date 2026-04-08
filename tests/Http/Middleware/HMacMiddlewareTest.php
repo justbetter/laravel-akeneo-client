@@ -1,13 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Tests\Http\Middleware;
 
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use JustBetter\AkeneoClient\Http\Middleware\HMacMiddleware;
 use JustBetter\AkeneoClient\Tests\TestCase;
 
-class HMacMiddlewareTest extends TestCase
+final class HMacMiddlewareTest extends TestCase
 {
     protected function setUp(): void
     {
@@ -16,8 +19,7 @@ class HMacMiddlewareTest extends TestCase
         config()->set('akeneo.event_secret', '::event-secret::');
     }
 
-    /** @test */
-    public function it_can_pass(): void
+    public function test_it_can_pass(): void
     {
         $request = $this->fabricateRequest('::event-secret::');
 
@@ -33,8 +35,7 @@ class HMacMiddlewareTest extends TestCase
         $this->assertTrue($passed);
     }
 
-    /** @test */
-    public function it_can_refuse(): void
+    public function test_it_can_refuse(): void
     {
         $request = $this->fabricateRequest('::invalid-event-secret::');
 
@@ -50,7 +51,7 @@ class HMacMiddlewareTest extends TestCase
     protected function fabricateRequest(string $secret): Request
     {
         $content = '::content::';
-        $timestamp = (string) time();
+        $timestamp = (string) Carbon::now()->getTimestamp();
         $hmac = $timestamp.'.'.$content;
 
         $signature = hash_hmac('sha256', $hmac, $secret);

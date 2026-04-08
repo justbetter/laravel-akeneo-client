@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Tests\Actions;
 
 use Illuminate\Support\Facades\Event;
@@ -9,10 +11,9 @@ use JustBetter\AkeneoClient\Events\ProductCreatedEvent;
 use JustBetter\AkeneoClient\Tests\TestCase;
 use Mockery\MockInterface;
 
-class DispatchEventTest extends TestCase
+final class DispatchEventTest extends TestCase
 {
-    /** @test */
-    public function it_can_dispatch_events(): void
+    public function test_it_can_dispatch_events(): void
     {
         Event::fake();
 
@@ -37,8 +38,6 @@ class DispatchEventTest extends TestCase
         $action = app(DispatchEvent::class);
         $action->dispatch($payload);
 
-        Event::assertDispatched(ProductCreatedEvent::class, function (ProductCreatedEvent $event) use ($payload): bool {
-            return $event->event === $payload;
-        });
+        Event::assertDispatched(ProductCreatedEvent::class, fn (ProductCreatedEvent $event): bool => $event->event === $payload);
     }
 }

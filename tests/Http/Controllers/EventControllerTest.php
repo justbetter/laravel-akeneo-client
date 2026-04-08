@@ -1,15 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JustBetter\AkeneoClient\Tests\Http\Controllers;
 
 use Illuminate\Support\Facades\Bus;
 use JustBetter\AkeneoClient\Jobs\EventJob;
 use JustBetter\AkeneoClient\Tests\TestCase;
 
-class EventControllerTest extends TestCase
+final class EventControllerTest extends TestCase
 {
-    /** @test */
-    public function it_can_dispatch_jobs(): void
+    public function test_it_can_dispatch_jobs(): void
     {
         Bus::fake();
 
