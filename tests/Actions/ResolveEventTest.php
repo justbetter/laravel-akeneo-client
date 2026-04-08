@@ -13,12 +13,11 @@ use JustBetter\AkeneoClient\Events\ProductRemovedEvent;
 use JustBetter\AkeneoClient\Events\ProductUpdatedEvent;
 use JustBetter\AkeneoClient\Exceptions\AkeneoException;
 use JustBetter\AkeneoClient\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 final class ResolveEventTest extends TestCase
 {
-    /**
-     * @dataProvider events
-     */
+    #[DataProvider('events')]
     public function test_it_can_resolve_events(string $event, string $class): void
     {
         /** @var ResolveEvent $action */
