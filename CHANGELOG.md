@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.6.0...main)
+[Unreleased changes](https://github.com/justbetter/laravel-akeneo-client/compare/1.6.1...main)
+## [1.6.1](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.6.1) - 2026-04-13
+
+### What's Changed
+* Fix request URL by @VincentBean in https://github.com/justbetter/laravel-akeneo-client/pull/20
+
+
+**Full Changelog**: https://github.com/justbetter/laravel-akeneo-client/compare/1.6.0...1.6.1
+
 ## [1.6.0](https://github.com/justbetter/laravel-akeneo-client/releases/tag/1.6.0) - 2026-04-08
 
 ### What's Changed
