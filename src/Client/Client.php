@@ -27,7 +27,7 @@ class Client implements ClientInterface
         /** @var Promise $promise */
         $promise = $this->buildHttpRequest($request)
             ->async()
-            ->send($request->getMethod(), $request->getUri()->getPath());
+            ->send($request->getMethod(), (string) $request->getUri());
 
         return $promise;
     }
