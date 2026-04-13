@@ -18,7 +18,7 @@ class Client implements ClientInterface
     public function sendRequest(RequestInterface $request): ResponseInterface
     {
         return $this->buildHttpRequest($request)
-            ->send($request->getMethod(), $request->getUri()->getPath())
+            ->send($request->getMethod(), (string) $request->getUri())
             ->toPsrResponse();
     }
 
